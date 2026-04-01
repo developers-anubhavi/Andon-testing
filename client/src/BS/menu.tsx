@@ -52,7 +52,8 @@ const Menu: React.FC<MenuProps> = ({ setShowMenu, toggleTheme, theme }) => {
   </div>
 </li>
 <li>
-<div id="mk1menu_tiei3" onClick={handleGearClick}>SETTINGS</div>
+<div id="mk1menu_tiei3" role="presentation"
+  tabIndex={-1} onClick={handleGearClick}>SETTINGS</div>
 </li>
 </ul>
         </div>
