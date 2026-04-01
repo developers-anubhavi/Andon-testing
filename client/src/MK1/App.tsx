@@ -650,6 +650,8 @@ useEffect(() => {
 </div>
 </header> */}
         <table id='mk1_table_header'>
+          <thead><tr><td></td></tr></thead>
+          <tbody>
           <tr id='mk1_row1'>
             <td id='mk1_today'>TODAY</td>
             <td id='mk1_present'>PRESENT</td>
@@ -679,6 +681,7 @@ useEffect(() => {
           <td>PF</td>
           <td id="mk1_pf_data">{data?.mk1_pf_data ?? 0}</td>
         </tr>
+        </tbody>
         </table>
 
 <table id="mk1_table_body" style={{ width: "100%" }}>

@@ -532,6 +532,7 @@ useEffect(() => {
 </div>
 </header> */}
         <table id='hs_table_header'>
+          <thead><tr><td></td></tr></thead>
           <tbody>
          <tr id='hs_row1'>
           <td id='hs_today'>TODAY</td>
@@ -563,6 +564,7 @@ useEffect(() => {
         </table>
         
         <table id='hs_table_body'>
+          <thead><tr><td></td></tr></thead>
         <tbody>
          <tr><td id='hs_hs' colSpan={20}  {...getCellProps(boxes.box41_color?.toString())}   style={{
     backgroundColor: getBackgroundColor(boxes.box41_color?.toString()),
