@@ -37,11 +37,11 @@ const Menu: React.FC<MenuProps> = ({ setShowMenu, toggleTheme, theme }) => {
 
         <div className="et_menu_content">
           <ul>
-            <li id='et_menu1' onClick={() => navigate("/")}>MK1</li>
-            <li id='et_menu2' onClick={() => navigate("/mk2_app")}>MK2</li>
-            <li id='et_menu3' onClick={() => navigate("/et_app")}>ET</li>
-            <li id='et_menu4' onClick={() => navigate("/bs_app")}>BS</li>
-            <li id='et_menu5' onClick={() => navigate("/hs_app")}>HS</li>
+            <li id='et_menu1' role="presentation" tabIndex={-1} onClick={() => navigate("/")}>MK1</li>
+            <li id='et_menu2' role="presentation" tabIndex={-1} onClick={() => navigate("/mk2_app")}>MK2</li>
+            <li id='et_menu3' role="presentation" tabIndex={-1} onClick={() => navigate("/et_app")}>ET</li>
+            <li id='et_menu4' role="presentation" tabIndex={-1} onClick={() => navigate("/bs_app")}>BS</li>
+            <li id='et_menu5' role="presentation" tabIndex={-1} onClick={() => navigate("/hs_app")}>HS</li>
            <li className="theme-toggle-item" onClick={toggleTheme}>
   <div className={`theme-toggle ${theme}`}>
     <span className="theme-toggle-text">

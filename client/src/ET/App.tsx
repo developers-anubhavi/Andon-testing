@@ -456,7 +456,7 @@ useEffect(() => {
             checked={selectMC}
             onChange={() => setSelectMC(prev => !prev)}
           />
-          M/C
+          <span>M/C</span>
         </label>
 
         <label className="checkbox-label">
@@ -465,7 +465,7 @@ useEffect(() => {
             checked={selectC}
             onChange={() => setSelectC(prev => !prev)}
           />
-          C
+          <span>C</span>
         </label>
       </div>
 

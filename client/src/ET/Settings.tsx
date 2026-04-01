@@ -96,7 +96,8 @@ export default function UserDetails({ logout, username: loggedInUsername }: User
     <div className="settings-container">
       <header className="topbar">
         <div className="topbar-left">
-          <img src={logo} alt="App Logo" className="topbar-logo" onClick={() => window.open("https://tiei.toyota-industries.com/", "_blank")} />
+          <img src={logo} alt="App Logo" className="topbar-logo" role="presentation"
+  tabIndex={-1} onClick={() => window.open("https://tiei.toyota-industries.com/", "_blank")} />
           <span className="topbar-title" style={{ marginLeft: '630px' }}>⚙️SETTINGS</span>
         </div>
         <div className="topbar-right">
@@ -164,6 +165,7 @@ export default function UserDetails({ logout, username: loggedInUsername }: User
                               src={deleteIcon}
                               alt="delete"
                               className="delete-icon"
+                              role="presentation" tabIndex={-1}
                               onClick={() => deleteUser(u.id)}
                             />
                           </td>
