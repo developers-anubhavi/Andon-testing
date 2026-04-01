@@ -170,7 +170,7 @@ const handleLogin = async () => {
         </div>
 
         <div className="input-group">
-          <label>Username</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             placeholder="Enter Username"
@@ -181,7 +181,7 @@ const handleLogin = async () => {
         </div>
 
         <div className="input-group">
-          <label>Password</label>
+          <label htmlFor="password">Password</label>
           <div className="password-wrapper">
             <input
               type={showPassword ? "text" : "password"}

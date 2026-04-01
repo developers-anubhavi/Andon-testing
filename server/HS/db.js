@@ -6,7 +6,7 @@ const config = {
     user: process.env.HS_DB_USER,
     password: process.env.HS_DB_PASSWORD,
     database: process.env.HS_DB_DATABASE,
-    port: parseInt(process.env.HS_DB_PORT, 10),
+    port: Number.parseInt(process.env.HS_DB_PORT, 10),
     options: { encrypt: false, trustServerCertificate: true }
 };
 

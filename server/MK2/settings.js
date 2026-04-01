@@ -51,8 +51,8 @@ function readFileToArray(filePath) {
     const data = fs.readFileSync(filePath, 'utf8');
     let values = data
       .split(/\r?\n/)
-      .map(line => parseFloat(line.trim()))
-      .filter(val => !isNaN(val));
+      .map(line => Number.parseFloat(line.trim()))
+      .filter(val => !Number.isNaN(val));
     while (values.length < 9) values.push(0);
     return values;
   } catch(err) {
@@ -66,8 +66,8 @@ function readTimeDev() {
     const data = fs.readFileSync(timeDevFilePath, 'utf8');
     let values = data
       .split(/\r?\n/)
-      .map(line => parseFloat(line.trim()))
-      .filter(val => !isNaN(val));
+      .map(line => Number.parseFloat(line.trim()))
+      .filter(val => !Number.isNaN(val));
     while (values.length < 9) values.push(0);
     return values;
   } catch(err) {
