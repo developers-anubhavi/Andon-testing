@@ -20,6 +20,8 @@ const Menu: React.FC<MenuProps> = ({ setShowMenu, toggleTheme, theme }) => {
 
   return (
     <div id="hs_menu_overlay" className={showSettings ? "blur" : ""}
+    role="presentation"
+  tabIndex={-1}
         onMouseEnter={() => setShowMenu(true)}
         onMouseLeave={() => setShowMenu(false)}>
       <div

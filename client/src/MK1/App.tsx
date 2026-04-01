@@ -650,7 +650,7 @@ useEffect(() => {
 </div>
 </header> */}
         <table id='mk1_table_header'>
-          <thead><tr><td></td></tr></thead>
+          <thead><tr><th></th></tr></thead>
           <tbody>
           <tr id='mk1_row1'>
             <td id='mk1_today'>TODAY</td>
@@ -713,8 +713,10 @@ useEffect(() => {
   >
     <div className={`triple-toggle ${activeType}`}>
       <div className={`triple-knob ${activeType}`} />
-      <span id="red" onClick={() => setActiveType("red")}>RED</span>
-      <span id="yellow" onClick={() => setActiveType("yellow")}>YELLOW</span>
+      <span id="red" role="presentation"
+  tabIndex={-1} onClick={() => setActiveType("red")}>RED</span>
+      <span id="yellow" role="presentation"
+  tabIndex={-1} onClick={() => setActiveType("yellow")}>YELLOW</span>
     </div>
   </div>
         </td>

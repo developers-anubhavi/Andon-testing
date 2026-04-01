@@ -22,6 +22,8 @@ const Menu: React.FC<MenuProps> = ({ setShowMenu, toggleTheme, theme }) => {
   return (
     <div
       id="et_menu_overlay"
+      role="presentation"
+  tabIndex={-1}
       onMouseEnter={() => setShowMenu(true)}    
       onMouseLeave={() => setShowMenu(false)}   
       className={showSettings ? "blur" : ""}

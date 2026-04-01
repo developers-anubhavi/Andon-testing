@@ -778,7 +778,7 @@ useEffect(() => {
 </div>
 </header> */}
         <table id='mk2_table1'>
-          <thead><tr><td></td></tr></thead>
+          <thead><tr><th></th></tr></thead>
           <tbody>
             <tr id='mk2_row1'>
               <td  id='mk2_today'>TODAY</td>
@@ -813,7 +813,7 @@ useEffect(() => {
        
 
         <table id='mk2_table2'>
-          <thead><tr><td></td></tr></thead>
+          <thead><tr><th></th></tr></thead>
           <tbody>
           <tr><td id='mk2_main2' colSpan={20} {...getCellProps(boxes.box49_color?.toString())}  style={{
     backgroundColor: getBackgroundColor(boxes.box49_color?.toString()),
@@ -837,8 +837,10 @@ useEffect(() => {
 <div className={`triple-toggle ${activeType}`}>
   <div className={`triple-knob ${activeType}`} />
 
-  <span id='red' onClick={() => setActiveType("red")}>RED</span>
-  <span id='yellow' onClick={() => setActiveType("yellow")}>YELLOW</span>
+  <span id='red' role="presentation"
+  tabIndex={-1} onClick={() => setActiveType("red")}>RED</span>
+  <span id='yellow' role="presentation"
+  tabIndex={-1} onClick={() => setActiveType("yellow")}>YELLOW</span>
   {/* <span id='cumduration' onClick={() => setActiveType("cumduration")}>DEFAULT</span> */}
 </div>
 </div></td></tr>

@@ -528,9 +528,7 @@ useEffect(() => {
 </div>
 </header> */}
         <table id='bs_table_header'>
-          <thead>
-            <tr><td></td></tr>
-          </thead>
+          <thead><tr><th></th></tr></thead>
         <tbody>
          <tr id='bs_row1'>
           <td id='bs_today'>TODAY</td>
@@ -562,7 +560,7 @@ useEffect(() => {
         </table>
         
         <table id='bs_table_body'>
-          <thead><tr><td></td></tr></thead>
+          <thead><tr><th></th></tr></thead>
         <tbody>
          <tr><td id='bs_bs' colSpan={20}  {...getCellProps(boxes.box41_color?.toString())}   style={{
     backgroundColor: getBackgroundColor(boxes.box41_color?.toString()),
