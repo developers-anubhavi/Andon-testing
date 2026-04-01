@@ -1494,7 +1494,6 @@ body{
   z-index: 2 !important;
   font-size: 25px !important;
   font-weight: 600 !important;
-  font-size: 23px !important;
   opacity: 0.6 !important;
   transition: color 0.3s ease, opacity 0.3s ease;
   cursor: pointer;

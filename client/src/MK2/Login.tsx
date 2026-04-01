@@ -190,9 +190,20 @@ const handleLogin = async () => {
               onChange={(e) => setPassword(e.target.value)}
               className={passError ? "error-input" : ""}
             />
-            <span className="eye-icon" onClick={() => setShowPassword(!showPassword)}>
-              {showPassword ? "👁️" : "👁️‍🗨️"}
-            </span>
+            <span
+    className="eye-icon"
+    role="button"
+    tabIndex={0}
+    aria-label={showPassword ? "Hide password" : "Show password"}
+    onClick={() => setShowPassword(!showPassword)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        setShowPassword(!showPassword);
+      }
+    }}
+  >
+    {showPassword ? "👁️" : "👁️‍🗨️"}
+  </span>
           </div>
         </div>
 
