@@ -694,7 +694,6 @@ useEffect(() => {
           <input
             type="checkbox"
             checked={selectMC}
-             role="presentation" tabIndex={-1} 
             onChange={() => setSelectMC(prev => !prev)}
           />
           <span>M/C</span>
@@ -704,7 +703,6 @@ useEffect(() => {
           <input
             type="checkbox"
             checked={selectC}
-             role="presentation" tabIndex={-1} 
             onChange={() => setSelectC(prev => !prev)}
           />
           <span>C</span>
