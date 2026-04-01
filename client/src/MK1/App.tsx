@@ -685,6 +685,7 @@ useEffect(() => {
         </table>
 
 <table id="mk1_table_body" style={{ width: "100%" }}>
+   <thead><tr><th></th></tr></thead>
   <tbody>
     <tr id="mk1_header_row">
         <td
