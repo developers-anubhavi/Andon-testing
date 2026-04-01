@@ -170,30 +170,41 @@ const handleLogin = async () => {
         </div>
 
         <div className="input-group">
-          <label>Username</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             placeholder="Enter Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className={userError ? "error-input" : ""}
-          />
+            className={userError ? "error-input" : ""}/>
         </div>
 
         <div className="input-group">
-          <label>Password</label>
+          <label htmlFor="password">Password</label>
           <div className="password-wrapper">
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="Enter Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className={passError ? "error-input" : ""}
-            />
-            <span className="eye-icon" onClick={() => setShowPassword(!showPassword)}>
-              {showPassword ? "👁️" : "👁️‍🗨️"}
-            </span>
-          </div>
+  <input
+    id="password"
+    type={showPassword ? "text" : "password"}
+    placeholder="Enter Password"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+    className={passError ? "error-input" : ""}
+  />
+  <span
+    className="eye-icon"
+    role="button"
+    tabIndex={0}
+    aria-label={showPassword ? "Hide password" : "Show password"}
+    onClick={() => setShowPassword(!showPassword)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        setShowPassword(!showPassword);
+      }
+    }}
+  >
+    {showPassword ? "👁️" : "👁️‍🗨️"}
+  </span>
+</div>
         </div>
 
         <button className="login-btn" onClick={handleLogin}>

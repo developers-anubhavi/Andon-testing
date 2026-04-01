@@ -409,16 +409,14 @@ useEffect(() => {
         type="text"
         placeholder="USERNAME"
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
+        onChange={(e) => setUsername(e.target.value)}/>
 
       <input
         className={`login-input ${overlayPassError ? "error-input" : ""}`}
         type="password"
         placeholder="PASSWORD"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+        onChange={(e) => setPassword(e.target.value)}/>
 
       {overlayErrorMsg && (
         <div className="login-error-text">{overlayErrorMsg}</div>
@@ -449,8 +447,7 @@ useEffect(() => {
           <input
             type="checkbox"
             checked={selectMC}
-            onChange={() => setSelectMC(prev => !prev)}
-          />
+            onChange={() => setSelectMC(prev => !prev)}/>
           M/C
         </label>
 
@@ -458,8 +455,7 @@ useEffect(() => {
           <input
             type="checkbox"
             checked={selectC}
-            onChange={() => setSelectC(prev => !prev)}
-          />
+            onChange={() => setSelectC(prev => !prev)}/>
           C
         </label>
       </div>
@@ -532,7 +528,10 @@ useEffect(() => {
 </div>
 </header> */}
         <table id='bs_table_header'>
-          <tbody>
+          <thead>
+            <tr><td></td></tr>
+          </thead>
+        <tbody>
          <tr id='bs_row1'>
           <td id='bs_today'>TODAY</td>
           <td id='bs_present'>PRESENT</td>
@@ -563,6 +562,7 @@ useEffect(() => {
         </table>
         
         <table id='bs_table_body'>
+          <thead><tr><td></td></tr></thead>
         <tbody>
          <tr><td id='bs_bs' colSpan={20}  {...getCellProps(boxes.box41_color?.toString())}   style={{
     backgroundColor: getBackgroundColor(boxes.box41_color?.toString()),
