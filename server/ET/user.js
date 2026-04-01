@@ -6,7 +6,7 @@ async function createDefaultUser() {
         const pool = await poolPromise;
 
         const checkUser = await pool.request()
-            .input("username", sql.VarChar, "Mansa")
+            .input("username", sql.VarChar, "TIEI")
             .query(`SELECT * FROM ANDON_USER_LOGIN WHERE USERNAME = @username`);
 
         if (checkUser.recordset.length > 0) {
@@ -14,10 +14,10 @@ async function createDefaultUser() {
             return;
         }
 
-        const hashedPassword = await bcrypt.hash("Mansa@1234", 10);
+        const hashedPassword = await bcrypt.hash("TIEI@1234", 10);
 
         await pool.request()
-            .input("USERNAME", sql.VarChar, "Mansa")
+            .input("USERNAME", sql.VarChar, "TIEI")
             .input("USERID", sql.VarChar, "AAPL032")
             .input("USERTYPE", sql.VarChar, "SUPER ADMIN")
             .input("PASSWORD", sql.VarChar, hashedPassword)

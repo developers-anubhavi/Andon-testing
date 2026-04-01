@@ -48,7 +48,7 @@ function App() {
          
          useEffect(() => {
            const fetchData = () => {
-             fetch("http://192.168.0.16:4002/api/et")
+             fetch("http://192.168.0.24:4002/api/et")
                .then(res => res.json())
                .then(result => {
                  setData(result);
@@ -80,7 +80,7 @@ function App() {
   }
 
   try {
-    const response = await fetch("http://192.168.0.16:4002/api/et_logincredentials", {
+    const response = await fetch("http://192.168.0.24:4002/api/et_logincredentials", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -174,7 +174,7 @@ const dbBoxMapping: Record<string, { mc: string; c: string }> = {
 //  useEffect(() => {
 //   const fetchBoxes = async () => {
 //     try {
-//       const res = await fetch("http://192.168.0.16:4002/api/et_boxes");
+//       const res = await fetch("http://192.168.0.24:4002/api/et_boxes");
 //       const data = await res.json();
 //       setBoxes(prev => ({
 //   ...prev,
@@ -198,7 +198,7 @@ const dbBoxMapping: Record<string, { mc: string; c: string }> = {
 
   useEffect(() => {
     const fetchBoxes = () => {
-      fetch("http://192.168.0.16:4002/api/et_boxes_colors")
+      fetch("http://192.168.0.24:4002/api/et_boxes_colors")
         .then(res => res.json())
         .then(data => {
   setBoxes(prev => {
@@ -306,7 +306,7 @@ const isYellowActive = (value?: number | null): boolean => {
 useEffect(() => {
   const fetchYellowCounts = async () => {
     try {
-      const res = await fetch("http://192.168.0.16:4002/api/et_yellow_count");
+      const res = await fetch("http://192.168.0.24:4002/api/et_yellow_count");
       const data = await res.json();
       setYellowCounts(data);
     } catch (err) {
@@ -337,7 +337,7 @@ type YellowTimes = {
   useEffect(() => {
     const fetchYellowTimes = async () => {
       try {
-        const res = await fetch("http://192.168.0.16:4002/api/et_yellow_time");
+        const res = await fetch("http://192.168.0.24:4002/api/et_yellow_time");
         const data = await res.json();
         setYellowTimes(data);
       } catch (err) {
@@ -372,7 +372,7 @@ type YellowTimes = {
 
 const fetchMcBoxes = async () => {
   try {
-    const res = await fetch("http://192.168.0.16:4002/api/et_mc");
+    const res = await fetch("http://192.168.0.24:4002/api/et_mc");
     const data = await res.json();
 
     const parsedData: BoxData = {};
@@ -485,7 +485,7 @@ useEffect(() => {
     });
 
     if (dbTarget) {
-      await fetch("http://192.168.0.16:4002/api/et_update-machine-status", {
+      await fetch("http://192.168.0.24:4002/api/et_update-machine-status", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

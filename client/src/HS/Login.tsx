@@ -37,7 +37,7 @@ export default function App() {
 
   const logoutUser = useCallback(() => {
     if (username) {
-      fetch("http://192.168.0.16:4002/api/hs_logout", {
+      fetch("http://192.168.0.24:4002/api/hs_logout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username }),
@@ -72,7 +72,7 @@ export default function App() {
 
         const blob = new Blob([payload], { type: "text/plain" });
 
-        navigator.sendBeacon("http://192.168.0.16:4002/api/hs_logout", blob);
+        navigator.sendBeacon("http://192.168.0.24:4002/api/hs_logout", blob);
       }
 
       localStorage.removeItem("authUser");
@@ -115,7 +115,7 @@ const handleLogin = async () => {
 
   try {
     const response = await fetch(
-      "http://192.168.0.16:4002/api/hs_logincredentials",
+      "http://192.168.0.24:4002/api/hs_logincredentials",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

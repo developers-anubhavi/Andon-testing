@@ -95,7 +95,7 @@ app.use('/api', mk2userrecord);
 
 app.use(express.text());
 
-const HOST = "192.168.0.16";
+const HOST = "192.168.0.24";
 const PORT = 4002;
 
 app.listen(PORT, HOST, () => {

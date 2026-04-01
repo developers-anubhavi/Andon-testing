@@ -126,9 +126,9 @@ const dbBoxMapping: Record<string, { mc: string; c: string }> = {
 useEffect(() => {
   const fetchBoxes = async () => {
     let url = "";
-    if (activeType === "red") url = "http://192.168.0.16:4002/api/mk2_red_time";
-    if (activeType === "yellow") url = "http://192.168.0.16:4002/api/mk2_yellow_time";
-    // if (activeType === "cumduration") url = "http://192.168.0.16:4002/api/mk2_boxes_cumduration";
+    if (activeType === "red") url = "http://192.168.0.24:4002/api/mk2_red_time";
+    if (activeType === "yellow") url = "http://192.168.0.24:4002/api/mk2_yellow_time";
+    // if (activeType === "cumduration") url = "http://192.168.0.24:4002/api/mk2_boxes_cumduration";
 
     try {
       const res = await fetch(url);
@@ -233,7 +233,7 @@ const handleOverlayLogin = async () => {
   }
 
   try {
-    const response = await fetch("http://192.168.0.16:4002/api/mk2_logincredentials", {
+    const response = await fetch("http://192.168.0.24:4002/api/mk2_logincredentials", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -267,7 +267,7 @@ const handleOverlayLogin = async () => {
 
   const fetchBoxes = async () => {
   try {
-    const res = await fetch("http://192.168.0.16:4002/api/mk2_mc");
+    const res = await fetch("http://192.168.0.24:4002/api/mk2_mc");
     const data = await res.json();
     setmcBoxes(data);
   } catch (err) {
@@ -286,7 +286,7 @@ useEffect(() => {
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const res = await fetch("http://192.168.0.16:4002/api/mk2");
+      const res = await fetch("http://192.168.0.24:4002/api/mk2");
       const result = await res.json();
       setData(result);
       setLoading(false);
@@ -313,7 +313,7 @@ useEffect(() => {
 // useEffect(() => {
 //   const fetchBoxes = async () => {
 //     try {
-//       const res = await fetch("http://192.168.0.16:4002/api/mk2_boxes");
+//       const res = await fetch("http://192.168.0.24:4002/api/mk2_boxes");
 //       const data = await res.json();
 
 //       setBoxes(prev => {
@@ -339,7 +339,7 @@ useEffect(() => {
   
   useEffect(() => {
     const fetchBoxes = () => {
-      fetch("http://192.168.0.16:4002/api/mk2_boxes_colors")
+      fetch("http://192.168.0.24:4002/api/mk2_boxes_colors")
         .then(res => res.json())
         .then(data => {
   setBoxes(prev => {
@@ -441,7 +441,7 @@ const [redCounts, setRedCounts] = useState<RedCountData>({});
 useEffect(() => {
   const fetchRedCounts = async () => {
     try {
-      const res = await fetch("http://192.168.0.16:4002/api/mk2_red_count");
+      const res = await fetch("http://192.168.0.24:4002/api/mk2_red_count");
       const data = await res.json();
 
       const numericData: RedCountData = {};
@@ -471,7 +471,7 @@ const [yellowCounts, setYellowCounts] = useState<YellowCountData>({});
 useEffect(() => {
   const fetchYellowCounts = async () => {
     try {
-      const res = await fetch("http://192.168.0.16:4002/api/mk2_yellow_count");
+      const res = await fetch("http://192.168.0.24:4002/api/mk2_yellow_count");
       const data = await res.json();
 
       const numericData: YellowCountData = {};
@@ -725,7 +725,7 @@ useEffect(() => {
     });
 
     if (dbTarget) {
-      await fetch("http://192.168.0.16:4002/api/mk2_update-machine-status", {
+      await fetch("http://192.168.0.24:4002/api/mk2_update-machine-status", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

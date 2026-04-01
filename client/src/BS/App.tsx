@@ -58,7 +58,7 @@ const handleOverlayLogin = async () => {
   }
 
   try {
-    const response = await fetch("http://192.168.0.16:4002/api/bs_logincredentials", {
+    const response = await fetch("http://192.168.0.24:4002/api/bs_logincredentials", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -155,7 +155,7 @@ const dbBoxMapping: Record<string, { mc: string; c: string }> = {
          
          useEffect(() => {
            const fetchData = () => {
-             fetch("http://192.168.0.16:4002/api/bs")
+             fetch("http://192.168.0.24:4002/api/bs")
                .then(res => res.json())
                .then(result => {
                  setData(result);
@@ -176,7 +176,7 @@ const dbBoxMapping: Record<string, { mc: string; c: string }> = {
 //  useEffect(() => {
 //   const fetchBoxes = async () => {
 //     try {
-//       const res = await fetch("http://192.168.0.16:4002/api/bs_boxes");
+//       const res = await fetch("http://192.168.0.24:4002/api/bs_boxes");
 //       const data = await res.json();
 //       setBoxes(prev => ({
 //   ...prev,
@@ -200,7 +200,7 @@ const dbBoxMapping: Record<string, { mc: string; c: string }> = {
 
   useEffect(() => {
     const fetchBoxes = () => {
-      fetch("http://192.168.0.16:4002/api/bs_boxes_colors")
+      fetch("http://192.168.0.24:4002/api/bs_boxes_colors")
         .then(res => res.json())
         .then(data => {
   setBoxes(prev => {
@@ -309,7 +309,7 @@ const isYellowActive = (value?: number | null): boolean => {
 useEffect(() => {
   const fetchYellowCounts = async () => {
     try {
-      const res = await fetch("http://192.168.0.16:4002/api/bs_yellow_count");
+      const res = await fetch("http://192.168.0.24:4002/api/bs_yellow_count");
       const data = await res.json();
       setYellowCounts(data);
     } catch (err) {
@@ -339,7 +339,7 @@ type YellowTimes = {
   useEffect(() => {
     const fetchYellowTimes = async () => {
       try {
-        const res = await fetch("http://192.168.0.16:4002/api/bs_yellow_time");
+        const res = await fetch("http://192.168.0.24:4002/api/bs_yellow_time");
         const data = await res.json();
         setYellowTimes(data);
       } catch (err) {
@@ -375,7 +375,7 @@ type YellowTimes = {
   
   const fetchBoxes = async () => {
   try {
-    const res = await fetch("http://192.168.0.16:4002/api/bs_mc");
+    const res = await fetch("http://192.168.0.24:4002/api/bs_mc");
     const data = await res.json();
     setmcBoxes(data);
   } catch (err) {
@@ -399,8 +399,6 @@ useEffect(() => {
   return (
 
       <div className="page-container">
-    <>
-
    {loginOverlayVisible && (
   <div className="overlay">
     <div className="login-overlay-content">
@@ -482,7 +480,7 @@ useEffect(() => {
     });
 
     if (dbTarget) {
-      await fetch("http://192.168.0.16:4002/api/bs_update-machine-status", {
+      await fetch("http://192.168.0.24:4002/api/bs_update-machine-status", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -1110,7 +1108,6 @@ useEffect(() => {
   />
 )}
       </div>
-    </>
     </div>
   )
 }

@@ -42,7 +42,7 @@ export default function UserDetails({ logout, username: loggedInUsername }: User
   };
 
   const refreshUsers = () => {
-    fetch("http://192.168.0.16:4002/api/mk2_users")
+    fetch("http://192.168.0.24:4002/api/mk2_users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   };
@@ -59,7 +59,7 @@ export default function UserDetails({ logout, username: loggedInUsername }: User
 
     const payload = { username: newUsername, userid, usertype: newUserType, password };
 
-    fetch("http://192.168.0.16:4002/api/users/mk2_add", {
+    fetch("http://192.168.0.24:4002/api/users/mk2_add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -83,7 +83,7 @@ export default function UserDetails({ logout, username: loggedInUsername }: User
   };
 
   const deleteUser = (id: number) => {
-    fetch(`http://192.168.0.16:4002/api/users/mk2_delete/${id}`, {
+    fetch(`http://192.168.0.24:4002/api/users/mk2_delete/${id}`, {
       method: "DELETE",
     }).then(() => {
       refreshUsers();
