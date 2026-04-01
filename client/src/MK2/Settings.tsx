@@ -163,8 +163,7 @@ export default function UserDetails({ logout, username: loggedInUsername }: User
                               src={deleteIcon}
                               alt="delete"
                               className="delete-icon"
-                              role="presentation"
-  tabIndex={-1}
+                              role="presentation" tabIndex={-1}
                               onClick={() => deleteUser(u.id)}
                             />
                           </td>
