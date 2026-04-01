@@ -57,7 +57,7 @@ function readFileToArray(filePath) {
     return values;
   } catch(err) {
     console.error('Error reading file', filePath, err);
-    return Array(9).fill(0);
+    return new Array(9).fill(0);
   }
 }
 
@@ -72,7 +72,7 @@ function readTimeDev() {
     return values;
   } catch(err) {
     console.error('Error reading TIMEDEV file', err);
-    return Array(9).fill(0);
+    return new Array(9).fill(0);
   }
 }
 

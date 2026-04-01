@@ -694,18 +694,20 @@ useEffect(() => {
           <input
             type="checkbox"
             checked={selectMC}
+             role="presentation" tabIndex={-1} 
             onChange={() => setSelectMC(prev => !prev)}
           />
-          M/C
+          <span>M/C</span>
         </label>
 
         <label className="checkbox-label">
           <input
             type="checkbox"
             checked={selectC}
+             role="presentation" tabIndex={-1} 
             onChange={() => setSelectC(prev => !prev)}
           />
-          C
+          <span>C</span>
         </label>
       </div>
 
