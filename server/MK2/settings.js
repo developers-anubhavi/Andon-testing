@@ -18,8 +18,8 @@ function readNumberFile(filePath, length = 9) {
     const data = fs.readFileSync(filePath, 'utf8');
     const values = data
       .split(/\r?\n/)
-      .map(line => parseFloat(line.trim()))
-      .filter(val => !isNaN(val));
+      .map(line => Number.parseFloat(line.trim()))
+      .filter(val => !Number.isNaN(val));
     while (values.length < length) values.push(0);
     return values;
   } catch (err) {
@@ -28,7 +28,6 @@ function readNumberFile(filePath, length = 9) {
   }
 }
 
-// Read shift times
 function readShiftTimes() {
   const lines = fs.readFileSync(FILE_PATH, 'utf8')
     .trim()
